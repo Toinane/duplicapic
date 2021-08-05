@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>DuplicaPic</title>
+        <meta charset="utf-8" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'none'; img-src 'self' https: data:; media-src 'none'; child-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self' https:;"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <script defer src="./search.js"></script>
+    </head>
+    <body>
+        <section id="titlebar" draggable>
+            <aside id="titlebar-menu">
+                <p>DuplicaPic</p>
+            </aside>
+            <section id="titlebar-traffic">
+                <div id="traffic-minimize"></div>
+                <div id="traffic-close"></div>
+            </section>
+        </section>
+        <section id="root">
+            <h1>Select folder to scan duplicate files</h1>
+            <p><input type="file" /></p>
+            <button>Start scan</button>
+        </section>
+    </body>
+</html>

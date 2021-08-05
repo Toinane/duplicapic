@@ -1,2 +1,1 @@
-# electron-template
-Electron Template
+# DuplicaPic

@@ -1,6 +1,6 @@
 {
-    "appId": "fr.toinane.electrontemplate",
-    "productName": "Electron Template",
+    "appId": "fr.toinane.duplicapic",
+    "productName": "DuplicaPic",
     "copyright": "Copyright © 2021 Toinane",
     "files": ["**/*"],
     "compression": "maximum",
@@ -16,9 +16,9 @@
         "type": "distribution",
         "darkModeSupport": true,
         "extendInfo": {
-            "CFBundleName": "Electron Template",
-            "CFBundleDisplayName": "Electron Template",
-            "CFBundleExecutable": "Electron Template",
+            "CFBundleName": "DuplicaPic",
+            "CFBundleDisplayName": "DuplicaPic",
+            "CFBundleExecutable": "DuplicaPic",
             "CFBundlePackageType": "APPL"
         }
     },
@@ -58,12 +58,12 @@
     },
     "linux": {
         "target": ["AppImage", "deb", "freebsd", "tar.gz"],
-        "executableName": "electron-template",
+        "executableName": "duplicapic",
         "icon": "./assets/icon.png",
-        "synopsis": "Electron Template",
+        "synopsis": "DuplicaPic",
         "category": "Graphics",
         "desktop": {
-            "Name": "Electron Template",
+            "Name": "DuplicaPic",
             "Type": "Application",
             "Icon": "assets/icon.png",
             "Categories": "Graphics;Utility"

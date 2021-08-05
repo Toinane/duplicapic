@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#titlebar {
+    display: flex;
+    justify-content: space-between;
+    height: 34px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#titlebar-menu {
+    -webkit-app-region: drag;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#titlebar-traffic {
+    display: flex;
+}
+
+#titlebar-traffic div {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    transition: 0.3s background;
+}
+
+#traffic-minimize:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transition: 0s background;
+}
+
+#traffic-minimize::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    width: 10px;
+    border-bottom: 1px solid #000;
+}
+
+#traffic-close:hover {
+    background: rgba(232, 17, 35, 0.8);
+    transition: 0s background;
+}
+
+#traffic-close::before,
+#traffic-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 12px;
+    height: 0.6px;
+    transform: rotate(45deg);
+    background: #000;
+}
+
+#traffic-close::after {
+    transform: rotate(-45deg);
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}

@@ -1,47 +1,49 @@
-const path = require('path');
-const { BrowserWindow } = require('electron');
+const path = require("path");
+const { BrowserWindow } = require("electron");
 
 class window {
-    windowParams = {
+    windowProps = {
         minWidth: 500,
-        minHeight: 300
+        minHeight: 300,
+        show: false,
     };
 
     constructor(name) {
         this.name = name;
 
-        this.securityParams = {
+        this.securityProps = {
             webPreferences: {
                 sandbox: true,
                 preload: path.join(
                     __dirname,
-                    '..',
-                    'src',
+                    "..",
+                    "src",
                     this.name,
-                    'preload.js'
-                )
-            }
+                    "preload.js"
+                ),
+            },
         };
     }
 
     showBrowserWindow() {
         this.window = new BrowserWindow({
-            ...this.securityParams,
-            ...this.windowParams
+            ...this.securityProps,
+            ...this.windowProps,
         });
 
         this.window.loadURL(
-            'file://' +
+            "file://" +
                 path.join(
                     __dirname,
-                    '..',
-                    'src',
+                    "..",
+                    "src",
                     this.name,
                     `${this.name}.html`
                 )
         );
 
-        this.window.on('closed', this.closeWindow);
+        this.window.once("ready-to-show", this.window.show);
+        this.window.on("closed", this.closeWindow);
 
         this.events();
 

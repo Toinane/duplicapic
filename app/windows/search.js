@@ -1,4 +1,4 @@
-const { ipcMain, app } = require("electron");
+const { ipcMain, dialog } = require("electron");
 const window = require("../common/window");
 
 class search extends window {
@@ -17,6 +17,14 @@ class search extends window {
     events() {
         ipcMain.on("minimize", () => this.window.minimize());
         ipcMain.on("close", () => this.closeWindow());
+        ipcMain.on("scan", () => {});
+        ipcMain.handle("get_folder", async () => {
+            const { filePaths } = await dialog.showOpenDialog({
+                properties: ["openDirectory"],
+            });
+
+            return filePaths;
+        });
     }
 }
 

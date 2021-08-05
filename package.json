@@ -1,0 +1,21 @@
+{
+    "name": "electron-template",
+    "productName": "Electron Template",
+    "version": "1.1.0",
+    "description": "Electron Template is a Github Template for Electron",
+    "repository": "git@github.com:Toinane/electron-template.git",
+    "author": "toinane <toinane@crea-that.fr>",
+    "license": "MIT",
+    "main": "app/app.js",
+    "scripts": {
+        "start": "electron app/app.js",
+        "release": "electron-builder --config electron-builder.json"
+    },
+    "dependencies": {
+        "electron-light-storage": "^1.1.2"
+    },
+    "devDependencies": {
+        "electron": "^13.1.8",
+        "electron-builder": "^22.11.7"
+    }
+}

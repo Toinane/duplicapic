@@ -1,0 +1,75 @@
+{
+    "appId": "fr.toinane.electrontemplate",
+    "productName": "Electron Template",
+    "copyright": "Copyright © 2021 Toinane",
+    "files": ["**/*"],
+    "compression": "maximum",
+    "directories": {
+        "buildResources": "assets",
+        "output": "release"
+    },
+    "publish": false,
+    "mac": {
+        "target": ["dmg"],
+        "category": "public.app-category.graphics-design",
+        "icon": "assets/icon.icns",
+        "type": "distribution",
+        "darkModeSupport": true,
+        "extendInfo": {
+            "CFBundleName": "Electron Template",
+            "CFBundleDisplayName": "Electron Template",
+            "CFBundleExecutable": "Electron Template",
+            "CFBundlePackageType": "APPL"
+        }
+    },
+    "dmg": {
+        "background": "assets/dmg_background.png",
+        "icon": "assets/volumeIcon.icns",
+        "window": {
+            "width": 540,
+            "height": 330
+        },
+        "contents": [
+            {
+                "type": "link",
+                "path": "/Applications",
+                "x": 390,
+                "y": 150
+            },
+            {
+                "type": "file",
+                "x": 150,
+                "y": 150
+            }
+        ]
+    },
+    "win": {
+        "target": ["nsis", "portable"],
+        "icon": "assets/icon.ico",
+        "publisherName": "Toinane",
+        "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": false,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+        "target": ["AppImage", "deb", "freebsd", "tar.gz"],
+        "executableName": "electron-template",
+        "icon": "./assets/icon.png",
+        "synopsis": "Electron Template",
+        "category": "Graphics",
+        "desktop": {
+            "Name": "Electron Template",
+            "Type": "Application",
+            "Icon": "assets/icon.png",
+            "Categories": "Graphics;Utility"
+        }
+    },
+    "snap": {
+        "plugs": ["default", "desktop"]
+    }
+}

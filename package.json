@@ -12,7 +12,10 @@
         "release": "electron-builder --config electron-builder.json"
     },
     "dependencies": {
-        "electron-light-storage": "^1.1.2"
+        "electron-light-storage": "^1.1.2",
+        "graceful-fs": "^4.2.8",
+        "hasha": "^5.2.2",
+        "throat": "^6.0.1"
     },
     "devDependencies": {
         "electron": "^13.1.8",

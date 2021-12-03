@@ -13,10 +13,13 @@ body {
 }
 
 #titlebar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 34px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
 #titlebar-menu {
@@ -74,29 +77,49 @@ body {
 }
 
 #root {
+    width: 100%;
+    height: 100%;
+    margin-top: 34px;
+    overflow-y: auto;
+}
+
+.duplicate {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    margin: 20px 10px;
 }
 
-.loading #root {
-    display: none;
-}
-.loading #loading {
+.duplicate > aside {
     display: flex;
-}
-
-#loading {
-    display: none;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-#loading p {
-    margin-left: 20px;
+.file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.file > aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file > aside p {
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #999;
+}
+
+img {
+    width: 100%;
+    max-width: 40vw;
+    height: auto;
 }

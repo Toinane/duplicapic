@@ -1,4 +1,8 @@
+let folderToScan;
+
 async function init() {
+    const scanEl = document.getElementById("scan");
+
     document
         .getElementById("traffic-minimize")
         .addEventListener("click", window.api.minimize);
@@ -6,11 +10,15 @@ async function init() {
         .getElementById("traffic-close")
         .addEventListener("click", window.api.close);
 
-    document.getElementById("scan").addEventListener("click", window.api.scan);
+    scanEl.addEventListener("click", () => {
+        document.body.classList.add("loading");
+        window.api.scan(folderToScan);
+    });
 
     document.getElementById("folder").addEventListener("click", async () => {
-        const folder = await window.api.getFolder();
-        console.log(folder);
+        folderToScan = await window.api.getFolder();
+        document.getElementById("text").innerText = folderToScan;
+        scanEl.removeAttribute("disabled");
     });
 }
 

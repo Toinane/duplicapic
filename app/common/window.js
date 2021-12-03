@@ -42,12 +42,16 @@ class window {
                 )
         );
 
-        this.window.once("ready-to-show", this.window.show);
+        this.showWindow(this.window);
         this.window.on("closed", this.closeWindow);
 
         this.events();
 
         return this.window;
+    }
+
+    showWindow(window) {
+        this.window.once("ready-to-show", window.show);
     }
 
     closeWindow() {
@@ -59,7 +63,7 @@ class window {
         if (this.window instanceof BrowserWindow) {
             return this.window;
         } else {
-            return this.createWindow();
+            return this.showBrowserWindow();
         }
     }
 
